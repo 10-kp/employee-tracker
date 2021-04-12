@@ -21,17 +21,25 @@ As a business owner, I want to be able to view and manage the departments, roles
 
 
 ## Installation
-<!-- - Download the repository and run 'node index' in the command line. -->
+- Create and download a repository
 
-- Create an SQL Workbench file.
+- Create an SQL Workbench file 
 
-- Run npm install to install the following dependencies. 
-    - npm init
+- Create a git repo and open the containing folder
+
+- Open VS Code and create a .gitignore file and iput node_modules/ and .DS_Store/
+
+- In the VS Code terminal, run npm init -y (to answer all queries) and to create package_json
+
+- In the VS Code terminal, install the following dependencies:
     - npm install mysql
     - npm install inquirer
+    - npm install console.table --save
+
+- Run 'node index' in the command line
 
 - NODE JS
-A command-line application that dynamically generates a TEAM PORTFOLIO from a user's input using the [Inquirer package](https://www.npmjs.com/package/inquirer). 
+A command-line application that dynamically generates a Employee Tracker from a user's input using the [Inquirer package](https://www.npmjs.com/package/inquirer). 
   
 The application will be invoked with the following command: node index.
 
@@ -40,7 +48,8 @@ The application will be invoked with the following command: node index.
 
 ## Test
 Here is a video demonstrating how to use the application.
-[Test](https://youtu.be/7EA5bEI2o94)
+<!-- Change the video -->
+[Test](https://youtu.be/7EA5bEI2o94) 
 
 ## Technologies Used
 - SQL
