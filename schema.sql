@@ -8,8 +8,6 @@ department_name VARCHAR (30),
 PRIMARY KEY (id)
 );
 
-SELECT * FROM department;
-
 CREATE TABLE roles (
 id INT AUTO_INCREMENT,
 title VARCHAR (30),
@@ -18,8 +16,6 @@ department_id INT (30),
 FOREIGN KEY (department_id) REFERENCES departments(id),
 PRIMARY KEY (id)
 );
-
-SELECT * FROM roles;
 
 CREATE TABLE employees (
 id INT AUTO_INCREMENT,
@@ -31,7 +27,3 @@ FOREIGN KEY(role_id) REFERENCES roles(id),
 FOREIGN KEY(manager_id) REFERENCES employees(id),
 PRIMARY KEY (id)
 );
-
-DROP TABLE employees;
-
-SELECT * FROM employee;
