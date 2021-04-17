@@ -1,9 +1,6 @@
 # employee-tracker
 
-
-[![](https://img.shields.io/badge/javascript-70%25-blue)]()
-[![](https://img.shields.io/badge/html-20%25-orange)]()
-[![](https://img.shields.io/badge/CSS-10%25-yellow)]()
+[![](https://img.shields.io/badge/javascript-100%25-blue)]()
 
 Git Hub Link: 
 
@@ -14,7 +11,6 @@ As a business owner, I want to be able to view and manage the departments, roles
 
 ## Table of Contents
 * [Installation](#installation)
-* [Usage](#usage)
 * [Test](#Test)
 * [Technologies Used](#technologies)
 * [License](#license)
@@ -36,22 +32,21 @@ As a business owner, I want to be able to view and manage the departments, roles
     - npm install inquirer
     - npm install console.table --save
 
-- Run 'node index' in the command line
+- Run 'node tracker.js' in the command line
 
 - NODE JS
-A command-line application that dynamically generates a Employee Tracker from a user's input using the [Inquirer package](https://www.npmjs.com/package/inquirer). 
+A command-line application that dynamically generates a Employee Tracker from a user's input using the [Inquirer package](https://www.npmjs.com/package/inquirer)
   
-The application will be invoked with the following command: node index.
-
-<!-- Once you run 'node index', you will be asked a series of questions about your team. After you answer all the questions an HTML file will be created from your answers and will be in the 'dist' folder.  -->
+The application will be invoked with the following command: node tracker.js
 
 
 ## Test
-Here is a video demonstrating how to use the application.
-<!-- Change the video -->
-[Test](https://youtu.be/7EA5bEI2o94) 
+Here is a video demonstrating how to use the application
 
-## Technologies Used
+[Test](https://youtu.be/ylcCpoGMhkg) 
+
+
+## Technologies
 - SQL
 - JavasScript
 - Node.js
