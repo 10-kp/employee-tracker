@@ -24,3 +24,4 @@ INSERT INTO employees(first_name, last_name, role_id) VALUES
 ("Cate", "Blanchett", 3),
 ("Idris", "Elba", 6),
 ("Kate", "Winslet", 5);
+

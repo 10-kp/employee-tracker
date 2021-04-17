@@ -4,7 +4,7 @@ const mysql = require("mysql");
 const cTable = require("console.table");
 
 //Choices 
-const choiceOptions = ["View all employees", "View all departments", "View all roles", "Update role", "Add department", "Add employee", "Exit"]
+const choiceOptions = ["View all employees", "View all departments", "View all roles", "Update role", "Add department", "Add employee", "Remove employee", "Exit"]
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -50,6 +50,9 @@ const start = () => {
                 case "Add employee":
                  addEmployee();
                  break;
+                 case "Remove employee":
+                 removeEmployee();
+                 break;
                 case "Exit":
                     console.log("Thank you for using Employee Tracker!");
                     connection.end();
@@ -62,13 +65,8 @@ const start = () => {
          // VIEW ALL EMPLOYEES
          const viewEmployees = () => {
             connection.query (`SELECT e.id, e.first_name AS "First Name", e.last_name AS "Last Name", r.title, d.department_name AS "Department", IFNULL(r.salary, 'No Data') AS "Salary", CONCAT(m.first_name," ",m.last_name) AS "Manager"
-            FROM employees e
-            LEFT JOIN roles r 
-            ON r.id = e.role_id 
-            LEFT JOIN departments d 
-            ON d.id = r.department_id
-            LEFT JOIN employees m ON m.id = e.manager_id
-            ORDER BY e.id;`, (err, res) => {
+            FROM employees e LEFT JOIN roles r ON r.id = e.role_id LEFT JOIN departments d ON d.id = r.department_id
+            LEFT JOIN employees m ON m.id = e.manager_id ORDER BY e.id;`, (err, res) => {
                 if (err) throw err;
                 console.table("All Employees", res);
                 start();
@@ -162,6 +160,26 @@ const start = () => {
                     if (err) throw err;
                     console.table("Successfully Inserted");
                     start();
+                    });
+                });
+            };
+
+        // REMOVE EMPLOYEE
+        const removeEmployee = () => {
+                    connection.query(`SELECT employees.first_name, employees.id FROM employees`, (err, res) => {
+                        if (err) throw err;
+                    });
+                inquirer.prompt([
+                    {
+                        name: 'removeID',
+                        type: 'input',
+                        message: "Which employee ID would you like to remove?",
+                    }
+                ]).then(answer => {
+                    connection.query(`DELETE FROM employees WHERE id = ?`, [answer.removeID], (err, res) => {
+                        if (err) throw err;
+                        console.log("Successfully deleted");
+                        start();
                     });
                 });
             };
