@@ -2,7 +2,7 @@
 
 [![](https://img.shields.io/badge/javascript-100%25-blue)]()
 
-Git Hub Link: 
+Git Hub Link: https://github.com/10-kp/employee-tracker
 
 
 ## Description
